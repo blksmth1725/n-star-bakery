@@ -21,7 +21,77 @@
   </header>
 
   <main>
+    <h1>Contact and Pre-Order</h1>
+    <p>
+      Send a pre-order for pickup or ask us a question. We reply within one business day. For same day orders call the shop during open hours.
+    </p>
 
+    <section>
+      <h2>Location and Hours</h2>
+      <address>
+        North Star Bakery<br>
+        123 Duckhorn St<br>
+        The Shire, ME 90210
+      </address>
+      <ul>
+        <li>Monday: Closed</li>
+        <li>Tuesday: 7:00 AM - 3:00 PM</li>
+        <li>Wednesday: 7:00 AM - 3:00 PM</li>
+        <li>Thursday: 7:00 AM - 3:00 PM</li>
+        <li>Friday: 7:00 AM - 3:00 PM</li>
+        <li>Saturday: 7:00 AM - 3:00 PM</li>
+        <li>Sunday: 7:00 AM - 3:00 PM</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pre-Order or General Inquiry</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your Details</legend>
+          <p>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" autocomplete="name" maxlength="100" required>
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autocomplete="email" maxlength="100" required>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Request Type</legend>
+          <p>
+            <input type="radio" name="request-type" id="request-pre-order" value="pre-order" required>
+            <label for="name">Pre-Order for pickup</label>
+          </p>
+          <p>
+            <input type="radio" name="request-type" id="request-question" value="general-question" required>
+            <label for="email">General question</label>
+          </p>
+        </fieldset>
+
+         <fieldset>
+          <legend>Pickup and Items</legend>
+          <p>
+            <label for="pickup-date">Pickup Date</label>
+            <input type="date" name="pickup-date" id="pickup-date" required>
+          </p>
+          <p>
+            <label for="item-details">Item Details</label><br>
+            <textarea name="item-details" id="item-details" rows="5" cols="40" minlength="5" maxlength="1000" required></textarea>
+          </p>
+          <p>
+            <label for="allergy-notes">Allergy Notes</label><br>
+            <textarea name="allergy-notes" id="allergy-notes" rows="3" cols="40" maxlength="500"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Send Request</button>
+        </p>
+      </form>
+    </section>
   </main>
 
    <footer>
