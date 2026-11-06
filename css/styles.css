@@ -199,7 +199,14 @@ form {
 }
 
 fieldset {
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2);
+  border: 2px solid var(--forest);
+  border-radius: 6px;
+}
+
+legend {
+  padding: 0 var(--space-1);
   font-family: var(--font-title);
   font-size: 1.15rem;
   font-weight: bold;
@@ -222,7 +229,7 @@ textarea {
   font: inherit;
   color: var(--forest);
   background-color: var(--sand);
-  border: var(--forest);
+  border: 2px solid var(--forest);
   border-radius: 4px;
 }
 
@@ -252,4 +259,56 @@ button,
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(15, 61, 58, 0.2);
   cursor: pointer;
+}
+
+footer {
+  padding: var(--space-2);
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--forest);
+  color: var(--sand);
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  header nav ul {
+    justify-content: flex-end;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  main {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  main > section:has(> article) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2) var(--space-3);
+  }
+
+  main > section > h2 {
+    grid-column: 1/-1;
+  }
+
+  article {
+    padding: var(--space-2);
+    border: 2px solid var(--forest);
+    border-radius: 6px;
+  }
+
+  article h3 {
+    margin-top: 0;
+  }
 }
