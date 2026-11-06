@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | North Star Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
@@ -48,8 +52,20 @@
     </section>
 
     <section>
+      <h2>Featured item of the week</h2>
+      <picture>
+        <source media="(min-width:700px)" srcset="assets/bakery-feature-large_c.png">
+        <img src="assets/bakery-feature-small_c.png" alt="Golden butter cookies and chocolate chip sandwich cookies stacked on wooden trays">
+      </picture>
+      <h3>Chocolate Chip Sandwich Cookies</h3>
+      <p>
+        Two soft buttery cookies pressed around a layer of melted chocolate chips. $3.50 each or $18 for a box of six. Available while supplies last.
+      </p>
+    </section>
+
+    <section>
       <h2>Hours and Location</h2>
-      <ul>
+      <ul class="hours">
         <li>Monday: Closed</li>
         <li>Tuesday: 7:00 AM - 3:00 PM</li>
         <li>Wednesday: 7:00 AM - 3:00 PM</li>
@@ -63,7 +79,7 @@
         123 Duckhorn St<br>
         The Shire, ME 90210
       </address>
-      <p><a href="contact.html">Pre-order or have questions</a></p>
+      <p><a class="button" href="contact.html">Pre-order or have questions</a></p>
     </section>
   </main>
 

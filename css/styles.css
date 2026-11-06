@@ -1,0 +1,255 @@
+/*
+North Star Bakery - Touchstone 3 stylesheet
+Color Palette:
+  - #0F3D3A - text, header, footer, borders
+  - #F4B13B - buttons and nav hover
+  - #A9622F - decorative dividers
+  - #F2E6D6 - page background
+*/
+
+:root {
+  --forest: #0f3d3a;
+  --gold: #f4b13b;
+  --toast: #a9622f;
+  --sand: #f2e6d6;
+
+  --font-sans: Montserrat, Arial, Helvetica, sans-serif;
+  --font-title: Syne, Georgia, "Times New Roman", serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--forest);
+  background-color: var(--sand);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  line-height: 1.2;
+  color: var(--forest);
+}
+
+h1 {
+  font-size: 2rem;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: var(--space-3) 0 var(--space-1);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+p,
+ul {
+  margin: 0 0 var(--space-2);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+strong {
+  color: var(--forest);
+}
+
+a {
+  color: var(--forest);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--forest);
+  outline-offset: 2px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background-color: var(--forest);
+  color: var(--sand);
+}
+
+header > a img {
+  display: block;
+  width: 140px;
+  height: auto;
+  border-radius: 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  border-radius: 4px;
+  color: var(--sand);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  background-color: var(--gold);
+  color: var(--forest);
+}
+
+header a:focus-visible {
+  outline-color: var(--gold);
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  border-top: var(--space-2);
+}
+
+main > section {
+  padding: var(--space-2) 0 var(--space-3);
+  border-top: 3px solid var(--toast);
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+picture {
+  display: block;
+}
+
+figure {
+  margin: var(--space-2) 0;
+}
+
+figcaption {
+  margin-top: var(--space-1);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin-bottom: var(--space-2);
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgba(15, 61, 58, 0.2);
+}
+
+address,
+.hours {
+  margin: 0 0 var(--space-2);
+  padding: var(--space-2);
+  font-style: normal;
+  text-align: left;
+  background-color: rgba(15, 61, 58, 0.06);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(15, 61, 58, 0.2);
+}
+
+.hours {
+  list-style: none;
+}
+
+form {
+  width: 100%;
+}
+
+fieldset {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--forest);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem;
+  font: inherit;
+  color: var(--forest);
+  background-color: var(--sand);
+  border: var(--forest);
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
+  accent-color: var(--forest);
+}
+
+fieldset p:has(input[type="radio"] label) {
+  font-weight: normal;
+}
+
+button,
+.button {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--forest);
+  background-color: var(--gold);
+  border: 2px solid var(--forest);
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(15, 61, 58, 0.2);
+  cursor: pointer;
+}
