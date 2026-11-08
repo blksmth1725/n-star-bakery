@@ -51,16 +51,18 @@
 
     <section>
       <h2>Pre-Order or General Inquiry</h2>
-      <form action="#" method="post">
+      <form id="pre-order-form" action="#" method="post" novalidate>
         <fieldset>
           <legend>Your Details</legend>
           <p>
             <label for="name">Full Name</label>
-            <input type="text" name="name" id="name" autocomplete="name" maxlength="100" required>
+            <input type="text" name="name" id="name" autocomplete="name" maxlength="100" required aria-describedby="name-error">
+            <span id="name-error" class="field-error" hidden></span>
           </p>
           <p>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" autocomplete="email" maxlength="100" required>
+            <input type="email" name="email" id="email" autocomplete="email" maxlength="100" required aria-describedby="email-error">
+            <span id="email-error" class="field-error" hidden></span>
           </p>
         </fieldset>
 
@@ -68,33 +70,39 @@
           <legend>Request Type</legend>
           <p>
             <input type="radio" name="request-type" id="request-pre-order" value="pre-order" required>
-            <label for="name">Pre-Order for pickup</label>
+            <label for="request-pre-order">Pre-Order for pickup</label>
           </p>
           <p>
             <input type="radio" name="request-type" id="request-question" value="general-question" required>
-            <label for="email">General question</label>
+            <label for="request-question">General question</label>
           </p>
+          <span id="request-type-error" class="field-error" hidden></span>
         </fieldset>
 
          <fieldset>
           <legend>Pickup and Items</legend>
           <p>
             <label for="pickup-date">Pickup Date</label>
-            <input type="date" name="pickup-date" id="pickup-date" required>
+            <input type="date" name="pickup-date" id="pickup-date" required aria-describedby="pickup-date-error">
+            <span id="pickup-date-error" class="field-error" hidden></span>
           </p>
           <p>
             <label for="item-details">Item Details</label><br>
-            <textarea name="item-details" id="item-details" rows="5" cols="40" minlength="5" maxlength="1000" required></textarea>
+            <textarea name="item-details" id="item-details" rows="5" cols="40" minlength="5" maxlength="1000" required aria-describedby="item-details-error"></textarea>
+            <span id="item-details-note" class="field-note" hidden>Filled in from your saved list on the products page. Edit as needed.</span>
+            <span id="item-details-error" class="field-error" hidden></span>
           </p>
           <p>
             <label for="allergy-notes">Allergy Notes</label><br>
-            <textarea name="allergy-notes" id="allergy-notes" rows="3" cols="40" maxlength="500"></textarea>
+            <textarea name="allergy-notes" id="allergy-notes" rows="3" cols="40" maxlength="500" aria-describedby="allergy-notes-error"></textarea>
+            <span id="allergy-notes-error" class="field-error" hidden></span>
           </p>
         </fieldset>
 
         <p>
           <button type="submit">Send Request</button>
         </p>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>

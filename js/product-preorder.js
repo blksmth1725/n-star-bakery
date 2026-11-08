@@ -1,6 +1,10 @@
 let currentPreorder = [];
 
-document.addEventListener("DOMContentLoaded", initProductsPage);
+const saveAndRender = (message) => {
+  savePreorder(currentPreorder);
+  renderPreorder();
+  document.getElementById("picker-message").textContent = message;
+};
 
 const initProductsPage = () => {
   const picker = document.getElementById("preorder-picker");
@@ -110,8 +114,8 @@ const handleClear = () => {
 };
 
 const renderPreorder = () => {
+  const panelEl = document.getElementById("preorder-panel");
   const listEl = document.getElementById("preorder-list");
-  const emptyEl = document.getElementById("preorder-empty");
   const totalEl = document.getElementById("preorder-total");
 
   listEl.innerHTML = "";
@@ -136,7 +140,7 @@ const renderPreorder = () => {
     listEl.appendChild(li);
   });
 
-  emptyEl.hidden = currentPreorder.length > 0;
+  panelEl.hidden = currentPreorder.length === 0;
   if (currentPreorder.length === 0) {
     totalEl.textContent = "";
   } else {
@@ -147,3 +151,5 @@ const renderPreorder = () => {
       )}. ` + "You pay when you pick up.";
   }
 };
+
+document.addEventListener("DOMContentLoaded", initProductsPage);

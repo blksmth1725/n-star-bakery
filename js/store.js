@@ -1,4 +1,4 @@
-const PREORDER_STORAGE_KEY = "northStarPreorder";
+const PREORDER_STORAGE_KEY = "NStarPreorder";
 const MAX_QTY = 50;
 
 const PRODUCTS = [
@@ -53,12 +53,18 @@ const PRODUCTS = [
   },
 ];
 
-const findProduct = () => {
+const findProduct = (id) => {
   return PRODUCTS.find((product) => product.id === id) || null;
 };
 
 const formatMoney = (amount) => {
   return "$" + (Number.isInteger(amount) ? String(amount) : amount.toFixed(2));
+};
+
+const formatItemLabel = (item) => {
+  const product = findProduct(item.id);
+  const unitWord = product.unit === "dozen" ? "dozen" : "x";
+  return `${item.qty} ${unitWord} ${product.name}`;
 };
 
 const loadPreorder = () => {

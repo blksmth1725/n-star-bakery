@@ -1,8 +1,6 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const CLOSED_DAY = 1;
 
-document.addEventListener("DOMContentLoaded", initContactPage);
-
 const initContactPage = () => {
   const form = document.getElementById("pre-order-form");
   const statusEl = document.getElementById("form-status");
@@ -31,31 +29,6 @@ const initContactPage = () => {
       "Thanks, your request passed every check. This page does not send requests yet, so nothing was submitted.";
   });
 };
-
-const VALIDATION_RULES = [
-  { fieldIds: ["name"], errorId: "name-error", validate: validateName },
-  { fieldIds: ["email"], errorId: "email-error", validate: validateEmail },
-  {
-    fieldIds: ["request-pre-order", "request-question"],
-    errorId: "request-type-error",
-    validate: validateRequestType,
-  },
-  {
-    fieldIds: ["pickup-date"],
-    errorId: "pickup-date-error",
-    validate: validatePickupDate,
-  },
-  {
-    fieldIds: ["item-details"],
-    errorId: "item-details-error",
-    validate: validateItemDetails,
-  },
-  {
-    fieldIds: ["allergy-notes"],
-    errorId: "allergy-notes-error",
-    validate: validateAllergyNotes,
-  },
-];
 
 const validateName = () => {
   const value = document.getElementById("name").value.trim();
@@ -128,6 +101,31 @@ const validateAllergyNotes = () => {
   return "";
 };
 
+const VALIDATION_RULES = [
+  { fieldIds: ["name"], errorId: "name-error", validate: validateName },
+  { fieldIds: ["email"], errorId: "email-error", validate: validateEmail },
+  {
+    fieldIds: ["request-pre-order", "request-question"],
+    errorId: "request-type-error",
+    validate: validateRequestType,
+  },
+  {
+    fieldIds: ["pickup-date"],
+    errorId: "pickup-date-error",
+    validate: validatePickupDate,
+  },
+  {
+    fieldIds: ["item-details"],
+    errorId: "item-details-error",
+    validate: validateItemDetails,
+  },
+  {
+    fieldIds: ["allergy-notes"],
+    errorId: "allergy-notes-error",
+    validate: validateAllergyNotes,
+  },
+];
+
 const validateField = (rule) => {
   const message = rule.validate();
   const errorEl = document.getElementById(rule.errorId);
@@ -189,3 +187,5 @@ const prefillItemDetails = () => {
   textarea.value = savedItems.map(formatItemLabel).join("\n");
   noteEl.hidden = false;
 };
+
+document.addEventListener("DOMContentLoaded", initContactPage);
