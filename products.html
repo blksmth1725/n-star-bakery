@@ -25,11 +25,45 @@
   </header>
 
   <main>
-    <h1>Products</h1>
+    <h1>Our Products</h1>
     <p>
-      Everything is made in small batches. Prices below are typical ranges and can vary with the season and size. To order ahead use the 
-      <a href="contact.html">Pre-Order Form</a>. You may pay when you pick up. No online checkout is needed.
+      Everything is made in small batches. Prices below are typical ranges and may vary
+      with season and size. To order ahead, use the
+      <a href="contact.html">pre-order form</a>. You pay when you pick up. No online checkout is needed.
     </p>
+
+    <section id="preorder-builder" aria-labelledby="builder-heading">
+      <h2 id="builder-heading">Build your pre-order</h2>
+      <p>
+        Choose items and quantities, then open the pre-order form. Your list is saved in this
+        browser, so it will still be here when you come back or move to the form.
+      </p>
+
+      <form id="preorder-picker" class="picker-form" novalidate>
+        <div class="field">
+          <label for="product-select">Product</label>
+          <select id="product-select" name="product"></select>
+        </div>
+        <div class="field">
+          <label for="product-qty">Quantity (1 to 50)</label>
+          <input id="product-qty" name="quantity" type="number" inputmode="numeric" min="1" max="50" step="1" value="1" aria-describedby="qty-error">
+          <span id="qty-error" class="field-error" hidden></span>
+        </div>
+        <div class="field">
+          <button type="submit">Add to list</button>
+        </div>
+      </form>
+      <p id="picker-message" class="form-status" role="status" aria-live="polite"></p>
+
+      <h3>Your pre-order list</h3>
+      <p id="preorder-empty">Your list is empty. Add an item above.</p>
+      <ul id="preorder-list" class="preorder-list" aria-live="polite"></ul>
+      <p id="preorder-total"></p>
+      <p>
+        <button type="button" id="clear-preorder">Clear list</button>
+        <a class="button" href="contact.html">Go to the pre-order form</a>
+      </p>
+    </section>
 
     <section>
       <h2>Breads</h2>
@@ -82,5 +116,7 @@
    <footer>
     <p>copy; 2026 North Star Bakery. Baked fresh in the neighborhood since 2009</p>
   </footer>
+  <script src="js/store.js"></script>
+  <script src="js/product-preorder.js"></script>
 </body>
 </html>
